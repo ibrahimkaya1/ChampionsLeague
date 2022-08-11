@@ -32,7 +32,7 @@ namespace ChampionsLeaugue
 
         private void GroupShow(List<Team> listSubmit1, ListBox box)
         {
-           for(int i = 0; i < listSubmit1.Count; i++)
+            for (int i = 0; i < listSubmit1.Count; i++)
             {
                 box.Items.Add(listSubmit1[i].TakimAdi);
             }
@@ -42,251 +42,252 @@ namespace ChampionsLeaugue
         {
             Random random = new Random();
             List<string> matches = new List<string>();
-            var team1=listSubmit1[3].TakimAdi;
-            var team2=listSubmit1[2].TakimAdi;
-            var team3=listSubmit1[1].TakimAdi;
-            var team4=listSubmit1[0].TakimAdi;
-            int goalTeam1 = random.Next(9); 
+            var team1 = listSubmit1[3].TakimAdi;
+            var team2 = listSubmit1[2].TakimAdi;
+            var team3 = listSubmit1[1].TakimAdi;
+            var team4 = listSubmit1[0].TakimAdi;
+            int goalTeam1 = random.Next(9);
             int goalTeam2 = random.Next(9);
             int goalTeam3 = random.Next(9);
             int goalTeam4 = random.Next(9);
             int totalAG1 = 0, totalAG2 = 0, totalAG3 = 0, totalAG4 = 0;
             int totalYG1 = 0, totalYG2 = 0, totalYG3 = 0, totalYG4 = 0;
             int point1 = 0, point2 = 0, point3 = 0, point4 = 0;
-            
-                matches.Add("******************  1.MAÇLAR  ***************");
-                matches.Add(team1 +"  "+goalTeam1+"-"+goalTeam2+"  "+ team2);
-                matches.Add(team3 + "  " + goalTeam3 + "-" + goalTeam4 + "  " + team4);
-                totalAG1 = totalAG1 + goalTeam1;
-                totalAG2 = totalAG2 + goalTeam2;
-                totalAG3 = totalAG3 + goalTeam3;
-                totalAG4 = totalAG4 + goalTeam4;
-                totalYG1 = totalYG1 + goalTeam2;
-                totalYG2 = totalYG2 + goalTeam1;
-                totalYG3 = totalYG3 + goalTeam4;
-                totalYG4 = totalYG4 + goalTeam3;
 
-                if (goalTeam1 > goalTeam2) point1 = point1 + 3;
-                else if (goalTeam2 > goalTeam1) point2 = point2 + 3;
-                else { point1 = point1 + 1; point2 = point2 + 1; }
-                
-                if (goalTeam3 > goalTeam4) point3 = point3 + 3;
-                else if (goalTeam4 > goalTeam3) point4 = point4 + 3;
-                else { point3 = point3 + 1; point4 = point4 + 1; }
+            matches.Add("******************  1.MAÇLAR  ***************");
+            matches.Add(team1 + "  " + goalTeam1 + "-" + goalTeam2 + "  " + team2);
+            matches.Add(team3 + "  " + goalTeam3 + "-" + goalTeam4 + "  " + team4);
+            totalAG1 = totalAG1 + goalTeam1;
+            totalAG2 = totalAG2 + goalTeam2;
+            totalAG3 = totalAG3 + goalTeam3;
+            totalAG4 = totalAG4 + goalTeam4;
+            totalYG1 = totalYG1 + goalTeam2;
+            totalYG2 = totalYG2 + goalTeam1;
+            totalYG3 = totalYG3 + goalTeam4;
+            totalYG4 = totalYG4 + goalTeam3;
 
-                matches.Add(" ");
-                matches.Add("******************  2.MAÇLAR  ***************");
+            if (goalTeam1 > goalTeam2) point1 = point1 + 3;
+            else if (goalTeam2 > goalTeam1) point2 = point2 + 3;
+            else { point1 = point1 + 1; point2 = point2 + 1; }
 
-                goalTeam1 = random.Next(9);
-                goalTeam2 = random.Next(9);
-                goalTeam3 = random.Next(9);
-                goalTeam4 = random.Next(9);
+            if (goalTeam3 > goalTeam4) point3 = point3 + 3;
+            else if (goalTeam4 > goalTeam3) point4 = point4 + 3;
+            else { point3 = point3 + 1; point4 = point4 + 1; }
 
-                matches.Add(team2 + "  " + goalTeam2 + "-" + goalTeam3 + "  " + team3);
-                matches.Add(team4 + "  " + goalTeam4 + "-" + goalTeam1 + "  " + team1);
+            matches.Add(" ");
+            matches.Add("******************  2.MAÇLAR  ***************");
 
-                totalAG1 = totalAG1 + goalTeam1;
-                totalAG2 = totalAG2 + goalTeam2;
-                totalAG3 = totalAG3 + goalTeam3;
-                totalAG4 = totalAG4 + goalTeam4;
-                totalYG1 = totalYG1 + goalTeam4;
-                totalYG2 = totalYG2 + goalTeam3;
-                totalYG3 = totalYG3 + goalTeam2;
-                totalYG4 = totalYG4 + goalTeam1;
+            goalTeam1 = random.Next(9);
+            goalTeam2 = random.Next(9);
+            goalTeam3 = random.Next(9);
+            goalTeam4 = random.Next(9);
 
-                if (goalTeam1 > goalTeam4) point1 = point1 + 3;
-                else if (goalTeam4 > goalTeam1) point4 = point4 + 3;
-                else { point1 = point1 + 1; point4 = point4 + 1; }
+            matches.Add(team2 + "  " + goalTeam2 + "-" + goalTeam3 + "  " + team3);
+            matches.Add(team4 + "  " + goalTeam4 + "-" + goalTeam1 + "  " + team1);
 
-                if (goalTeam3 > goalTeam2) point3 = point3 + 3;
-                else if (goalTeam2 > goalTeam3) point2 = point2 + 3;
-                else { point3 = point3 + 1; point2 = point2 + 1; }
+            totalAG1 = totalAG1 + goalTeam1;
+            totalAG2 = totalAG2 + goalTeam2;
+            totalAG3 = totalAG3 + goalTeam3;
+            totalAG4 = totalAG4 + goalTeam4;
+            totalYG1 = totalYG1 + goalTeam4;
+            totalYG2 = totalYG2 + goalTeam3;
+            totalYG3 = totalYG3 + goalTeam2;
+            totalYG4 = totalYG4 + goalTeam1;
 
-                matches.Add(" ");
-                matches.Add("******************  3.MAÇLAR  ***************");
+            if (goalTeam1 > goalTeam4) point1 = point1 + 3;
+            else if (goalTeam4 > goalTeam1) point4 = point4 + 3;
+            else { point1 = point1 + 1; point4 = point4 + 1; }
 
-                goalTeam1 = random.Next(9);
-                goalTeam2 = random.Next(9);
-                goalTeam3 = random.Next(9);
-                goalTeam4 = random.Next(9);
+            if (goalTeam3 > goalTeam2) point3 = point3 + 3;
+            else if (goalTeam2 > goalTeam3) point2 = point2 + 3;
+            else { point3 = point3 + 1; point2 = point2 + 1; }
 
-                matches.Add(team4 + "  " + goalTeam4 + "-" + goalTeam2 + "  " + team2);
-                matches.Add(team3 + "  " + goalTeam3 + "-" + goalTeam1 + "  " + team1);
+            matches.Add(" ");
+            matches.Add("******************  3.MAÇLAR  ***************");
 
-                totalAG1 = totalAG1 + goalTeam1;
-                totalAG2 = totalAG2 + goalTeam2;
-                totalAG3 = totalAG3 + goalTeam3;
-                totalAG4 = totalAG4 + goalTeam4;
-                totalYG1 = totalYG1 + goalTeam3;
-                totalYG2 = totalYG2 + goalTeam4;
-                totalYG3 = totalYG3 + goalTeam1;
-                totalYG4 = totalYG4 + goalTeam2;
+            goalTeam1 = random.Next(9);
+            goalTeam2 = random.Next(9);
+            goalTeam3 = random.Next(9);
+            goalTeam4 = random.Next(9);
 
-                if (goalTeam2 > goalTeam4) point2 = point2 + 3;
-                else if (goalTeam4 > goalTeam2) point4 = point4 + 3;
-                else { point2 = point2 + 1; point4 = point4 + 1; }
+            matches.Add(team4 + "  " + goalTeam4 + "-" + goalTeam2 + "  " + team2);
+            matches.Add(team3 + "  " + goalTeam3 + "-" + goalTeam1 + "  " + team1);
 
-                if (goalTeam3 > goalTeam1) point3 = point3 + 3;
-                else if (goalTeam1 > goalTeam3) point1 = point1 + 3;
-                else { point3 = point3 + 1; point1 = point1 + 1; }
+            totalAG1 = totalAG1 + goalTeam1;
+            totalAG2 = totalAG2 + goalTeam2;
+            totalAG3 = totalAG3 + goalTeam3;
+            totalAG4 = totalAG4 + goalTeam4;
+            totalYG1 = totalYG1 + goalTeam3;
+            totalYG2 = totalYG2 + goalTeam4;
+            totalYG3 = totalYG3 + goalTeam1;
+            totalYG4 = totalYG4 + goalTeam2;
 
-                matches.Add(" ");
-                matches.Add("******************  4.MAÇLAR  ***************");
+            if (goalTeam2 > goalTeam4) point2 = point2 + 3;
+            else if (goalTeam4 > goalTeam2) point4 = point4 + 3;
+            else { point2 = point2 + 1; point4 = point4 + 1; }
 
-                goalTeam1 = random.Next(9);
-                goalTeam2 = random.Next(9);
-                goalTeam3 = random.Next(9);
-                goalTeam4 = random.Next(9);
+            if (goalTeam3 > goalTeam1) point3 = point3 + 3;
+            else if (goalTeam1 > goalTeam3) point1 = point1 + 3;
+            else { point3 = point3 + 1; point1 = point1 + 1; }
 
-                matches.Add(team1 + "  " + goalTeam1 + "-" + goalTeam3 + "  " + team3);
-                matches.Add(team2 + "  " + goalTeam2 + "-" + goalTeam4 + "  " + team4);
+            matches.Add(" ");
+            matches.Add("******************  4.MAÇLAR  ***************");
 
-                totalAG1 = totalAG1 + goalTeam1;
-                totalAG2 = totalAG2 + goalTeam2;
-                totalAG3 = totalAG3 + goalTeam3;
-                totalAG4 = totalAG4 + goalTeam4;
-                totalYG1 = totalYG1 + goalTeam3;
-                totalYG2 = totalYG2 + goalTeam4;
-                totalYG3 = totalYG3 + goalTeam1;
-                totalYG4 = totalYG4 + goalTeam2;
+            goalTeam1 = random.Next(9);
+            goalTeam2 = random.Next(9);
+            goalTeam3 = random.Next(9);
+            goalTeam4 = random.Next(9);
 
-                if (goalTeam2 > goalTeam4) point2 = point2 + 3;
-                else if (goalTeam4 > goalTeam2) point4 = point4 + 3;
-                else { point2 = point2 + 1; point4 = point4 + 1; }
+            matches.Add(team1 + "  " + goalTeam1 + "-" + goalTeam3 + "  " + team3);
+            matches.Add(team2 + "  " + goalTeam2 + "-" + goalTeam4 + "  " + team4);
 
-                if (goalTeam3 > goalTeam1) point3 = point3 + 3;
-                else if (goalTeam1 > goalTeam3) point1 = point1 + 3;
-                else { point3 = point3 + 1; point1 = point1 + 1; }
+            totalAG1 = totalAG1 + goalTeam1;
+            totalAG2 = totalAG2 + goalTeam2;
+            totalAG3 = totalAG3 + goalTeam3;
+            totalAG4 = totalAG4 + goalTeam4;
+            totalYG1 = totalYG1 + goalTeam3;
+            totalYG2 = totalYG2 + goalTeam4;
+            totalYG3 = totalYG3 + goalTeam1;
+            totalYG4 = totalYG4 + goalTeam2;
 
-                matches.Add(" ");
-                matches.Add("******************  5.MAÇLAR  ***************");
+            if (goalTeam2 > goalTeam4) point2 = point2 + 3;
+            else if (goalTeam4 > goalTeam2) point4 = point4 + 3;
+            else { point2 = point2 + 1; point4 = point4 + 1; }
 
-                goalTeam1 = random.Next(9);
-                goalTeam2 = random.Next(9);
-                goalTeam3 = random.Next(9);
-                goalTeam4 = random.Next(9);
+            if (goalTeam3 > goalTeam1) point3 = point3 + 3;
+            else if (goalTeam1 > goalTeam3) point1 = point1 + 3;
+            else { point3 = point3 + 1; point1 = point1 + 1; }
 
-                matches.Add(team1 + "  " + goalTeam1 + "-" + goalTeam4 + "  " + team4);
-                matches.Add(team3 + "  " + goalTeam3 + "-" + goalTeam2 + "  " + team2);
+            matches.Add(" ");
+            matches.Add("******************  5.MAÇLAR  ***************");
 
-                totalAG1 = totalAG1 + goalTeam1;
-                totalAG2 = totalAG2 + goalTeam2;
-                totalAG3 = totalAG3 + goalTeam3;
-                totalAG4 = totalAG4 + goalTeam4;
-                totalYG1 = totalYG1 + goalTeam4;
-                totalYG2 = totalYG2 + goalTeam3;
-                totalYG3 = totalYG3 + goalTeam2;
-                totalYG4 = totalYG4 + goalTeam1;
+            goalTeam1 = random.Next(9);
+            goalTeam2 = random.Next(9);
+            goalTeam3 = random.Next(9);
+            goalTeam4 = random.Next(9);
 
-                if (goalTeam1 > goalTeam4) point1 = point1 + 3;
-                else if (goalTeam4 > goalTeam1) point4 = point4 + 3;
-                else { point1 = point1 + 1; point4 = point4 + 1; }
+            matches.Add(team1 + "  " + goalTeam1 + "-" + goalTeam4 + "  " + team4);
+            matches.Add(team3 + "  " + goalTeam3 + "-" + goalTeam2 + "  " + team2);
 
-                if (goalTeam3 > goalTeam2) point3 = point3 + 3;
-                else if (goalTeam2 > goalTeam3) point2 = point2 + 3;
-                else { point3 = point3 + 1; point2 = point2 + 1; }
+            totalAG1 = totalAG1 + goalTeam1;
+            totalAG2 = totalAG2 + goalTeam2;
+            totalAG3 = totalAG3 + goalTeam3;
+            totalAG4 = totalAG4 + goalTeam4;
+            totalYG1 = totalYG1 + goalTeam4;
+            totalYG2 = totalYG2 + goalTeam3;
+            totalYG3 = totalYG3 + goalTeam2;
+            totalYG4 = totalYG4 + goalTeam1;
 
-                matches.Add(" ");
-                matches.Add("******************  6.MAÇLAR  ***************");
+            if (goalTeam1 > goalTeam4) point1 = point1 + 3;
+            else if (goalTeam4 > goalTeam1) point4 = point4 + 3;
+            else { point1 = point1 + 1; point4 = point4 + 1; }
 
-                goalTeam1 = random.Next(9);
-                goalTeam2 = random.Next(9);
-                goalTeam3 = random.Next(9);
-                goalTeam4 = random.Next(9);
+            if (goalTeam3 > goalTeam2) point3 = point3 + 3;
+            else if (goalTeam2 > goalTeam3) point2 = point2 + 3;
+            else { point3 = point3 + 1; point2 = point2 + 1; }
 
-                matches.Add(team2 + "  " + goalTeam2 + "-" + goalTeam1 + "  " + team1);
-                matches.Add(team4 + "  " + goalTeam4 + "-" + goalTeam3 + "  " + team3);
+            matches.Add(" ");
+            matches.Add("******************  6.MAÇLAR  ***************");
 
-                totalAG1 = totalAG1 + goalTeam1;
-                totalAG2 = totalAG2 + goalTeam2;
-                totalAG3 = totalAG3 + goalTeam3;
-                totalAG4 = totalAG4 + goalTeam4;
-                totalYG1 = totalYG1 + goalTeam2;
-                totalYG2 = totalYG2 + goalTeam1;
-                totalYG3 = totalYG3 + goalTeam4;
-                totalYG4 = totalYG4 + goalTeam3;
+            goalTeam1 = random.Next(9);
+            goalTeam2 = random.Next(9);
+            goalTeam3 = random.Next(9);
+            goalTeam4 = random.Next(9);
 
-                if (goalTeam1 > goalTeam2) point1 = point1 + 3;
-                else if (goalTeam2 > goalTeam1) point2 = point2 + 3;
-                else { point1 = point1 + 1; point2 = point2 + 1; }
+            matches.Add(team2 + "  " + goalTeam2 + "-" + goalTeam1 + "  " + team1);
+            matches.Add(team4 + "  " + goalTeam4 + "-" + goalTeam3 + "  " + team3);
 
-                if (goalTeam3 > goalTeam4) point3 = point3 + 3;
-                else if (goalTeam4 > goalTeam3) point4 = point4 + 3;
-                else { point3 = point3 + 1; point4 = point4 + 1; }
+            totalAG1 = totalAG1 + goalTeam1;
+            totalAG2 = totalAG2 + goalTeam2;
+            totalAG3 = totalAG3 + goalTeam3;
+            totalAG4 = totalAG4 + goalTeam4;
+            totalYG1 = totalYG1 + goalTeam2;
+            totalYG2 = totalYG2 + goalTeam1;
+            totalYG3 = totalYG3 + goalTeam4;
+            totalYG4 = totalYG4 + goalTeam3;
 
-                matches.Add("***********************************");
-                int avg1 = totalAG1 - totalYG1;
-                int avg2 = totalAG2 - totalYG2;
-                int avg3 = totalAG3 - totalYG3;
-                int avg4 = totalAG4 - totalYG4;
+            if (goalTeam1 > goalTeam2) point1 = point1 + 3;
+            else if (goalTeam2 > goalTeam1) point2 = point2 + 3;
+            else { point1 = point1 + 1; point2 = point2 + 1; }
 
-                Team newTeam = null;
+            if (goalTeam3 > goalTeam4) point3 = point3 + 3;
+            else if (goalTeam4 > goalTeam3) point4 = point4 + 3;
+            else { point3 = point3 + 1; point4 = point4 + 1; }
 
-                teams = new List<Team>();
-                newTeam = new Team(team1, point1,totalAG1,totalYG1,avg1);
-                teams.Add(newTeam);
-                newTeam = new Team(team2, point2, totalAG2, totalYG2, avg2);
-                teams.Add(newTeam);
-                newTeam = new Team(team3, point3, totalAG3, totalYG3, avg3);
-                teams.Add(newTeam);
-                newTeam = new Team(team4, point4, totalAG4, totalYG4, avg4);
-                teams.Add(newTeam);
+            matches.Add("***********************************");
+            int avg1 = totalAG1 - totalYG1;
+            int avg2 = totalAG2 - totalYG2;
+            int avg3 = totalAG3 - totalYG3;
+            int avg4 = totalAG4 - totalYG4;
 
-                int number;
-                Team temp=null;
-                for(int i = 0; i < teams.Count-1; i++)
+            Team newTeam = null;
+
+            teams = new List<Team>();
+            newTeam = new Team(team1, point1, totalAG1, totalYG1, avg1);
+            teams.Add(newTeam);
+            newTeam = new Team(team2, point2, totalAG2, totalYG2, avg2);
+            teams.Add(newTeam);
+            newTeam = new Team(team3, point3, totalAG3, totalYG3, avg3);
+            teams.Add(newTeam);
+            newTeam = new Team(team4, point4, totalAG4, totalYG4, avg4);
+            teams.Add(newTeam);
+
+            int number;
+            Team temp = null;
+            for (int i = 0; i < teams.Count - 1; i++)
+            {
+                for (int j = i + 1; j < teams.Count; j++)
                 {
-                    for(int j = i+1; j < teams.Count; j++)
+                    if (teams[j].Point == teams[i].Point)
                     {
-                        if (teams[j].Point == teams[i].Point)
+                        if (teams[j].Avarage == teams[i].Avarage)
                         {
-                            if(teams[j].Avarage == teams[i].Avarage)
+                            if (teams[j].AGol == teams[i].AGol)
                             {
-                                if(teams[j].AGol == teams[i].AGol)
-                                {
-                                    number = random.Next(2);
-                                    if (number == 0)
-                                    {
-                                        temp = teams[j];
-                                        teams[j] = teams[i];
-                                        teams[i] = temp;
-                                    }
-                                }
-                                else if (teams[j].AGol > teams[i].AGol) 
+                                number = random.Next(2);
+                                if (number == 0)
                                 {
                                     temp = teams[j];
                                     teams[j] = teams[i];
                                     teams[i] = temp;
                                 }
-                            } else if(teams[j].Avarage > teams[i].Avarage) 
+                            }
+                            else if (teams[j].AGol > teams[i].AGol)
                             {
                                 temp = teams[j];
                                 teams[j] = teams[i];
                                 teams[i] = temp;
                             }
                         }
-                        else if(teams[j].Point > teams[i].Point)
+                        else if (teams[j].Avarage > teams[i].Avarage)
                         {
                             temp = teams[j];
                             teams[j] = teams[i];
                             teams[i] = temp;
                         }
                     }
-                }
-                listBox1.Items.Clear();
-                listBox1.Items.Add("TAKIM   PUAN  AG  YG AVG");
-                for(int i = 0; i < teams.Count; i++)
-                {
-                    listBox1.Items.Add(teams[i].TakimAdi+ "  "+teams[i].Point+"  "+teams[i].AGol+"  "+teams[i].YGol+"  "+teams[i].Avarage);
-                    if (i < 2)
+                    else if (teams[j].Point > teams[i].Point)
                     {
-                        listBox3.Items.Add(teams[i].TakimAdi);
+                        temp = teams[j];
+                        teams[j] = teams[i];
+                        teams[i] = temp;
                     }
                 }
+            }
+            listBox1.Items.Clear();
+            listBox1.Items.Add("TAKIM   PUAN  AG  YG AVG");
+            for (int i = 0; i < teams.Count; i++)
+            {
+                listBox1.Items.Add(teams[i].TakimAdi + "  " + teams[i].Point + "  " + teams[i].AGol + "  " + teams[i].YGol + "  " + teams[i].Avarage);
+                if (i < 2)
+                {
+                    listBox3.Items.Add(teams[i].TakimAdi);
+                }
+            }
 
 
             box.Items.Clear();
-            for(int i = 0; i < matches.Count; i++)
+            for (int i = 0; i < matches.Count; i++)
             {
                 box.Items.Add(matches[i]);
             }
@@ -297,7 +298,7 @@ namespace ChampionsLeaugue
         {
             GroupShow(listSubmit1, listBox1);
             fikstur(listSubmit1, listBox2);
-            button1.Visible= false;
+            button1.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)

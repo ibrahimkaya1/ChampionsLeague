@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Windows10\\OneDrive\\Belgeler\\GitHub\\ChampionsLeaugue\\ChampionsLeaugue\\ChampionsLeaugue.csproj",
+      "projectUniqueName": "C:\\Users\\Windows10\\OneDrive\\Belgeler\\GitHub\\ChampionsLeaugue\\ChampionsLeague\\ChampionsLeaugue\\ChampionsLeaugue.csproj",
       "projectName": "ChampionsLeaugue",
-      "projectPath": "C:\\Users\\Windows10\\OneDrive\\Belgeler\\GitHub\\ChampionsLeaugue\\ChampionsLeaugue\\ChampionsLeaugue.csproj",
+      "projectPath": "C:\\Users\\Windows10\\OneDrive\\Belgeler\\GitHub\\ChampionsLeaugue\\ChampionsLeague\\ChampionsLeaugue\\ChampionsLeaugue.csproj",
       "packagesPath": "C:\\Users\\Windows10\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Windows10\\OneDrive\\Belgeler\\GitHub\\ChampionsLeaugue\\ChampionsLeaugue\\obj\\",
+      "outputPath": "C:\\Users\\Windows10\\OneDrive\\Belgeler\\GitHub\\ChampionsLeaugue\\ChampionsLeague\\ChampionsLeaugue\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
