@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -54,167 +55,197 @@ namespace ChampionsLeaugue
             int totalYG1 = 0, totalYG2 = 0, totalYG3 = 0, totalYG4 = 0;
             int point1 = 0, point2 = 0, point3 = 0, point4 = 0;
 
-            matches.Add("******************  1.MAÇLAR  ***************");
-            matches.Add(team1 + "  " + goalTeam1 + "-" + goalTeam2 + "  " + team2);
-            matches.Add(team3 + "  " + goalTeam3 + "-" + goalTeam4 + "  " + team4);
-            totalAG1 = totalAG1 + goalTeam1;
-            totalAG2 = totalAG2 + goalTeam2;
-            totalAG3 = totalAG3 + goalTeam3;
-            totalAG4 = totalAG4 + goalTeam4;
-            totalYG1 = totalYG1 + goalTeam2;
-            totalYG2 = totalYG2 + goalTeam1;
-            totalYG3 = totalYG3 + goalTeam4;
-            totalYG4 = totalYG4 + goalTeam3;
+            int number = 0;
+            List<int> listNumbers = new List<int>();
+            while (listNumbers.Count < 6)
+            {
+                number = random.Next(0, 6);
+                //daha önce üretilmemiş ise ekle
+                if (!listNumbers.Any(l => l == number))
+                    listNumbers.Add(number);
+            }
 
-            if (goalTeam1 > goalTeam2) point1 = point1 + 3;
-            else if (goalTeam2 > goalTeam1) point2 = point2 + 3;
-            else { point1 = point1 + 1; point2 = point2 + 1; }
+            for(int i = 0; i < listNumbers.Count; i++)
+            {
+                if(i== 0) matches.Add("******************  1.MAÇLAR  ***************");
+                if(i== 1) matches.Add("******************  2.MAÇLAR  ***************");
+                if(i== 2) matches.Add("******************  3.MAÇLAR  ***************");
+                if(i== 3) matches.Add("******************  4.MAÇLAR  ***************");
+                if(i== 4) matches.Add("******************  5.MAÇLAR  ***************");
+                if(i== 5) matches.Add("******************  6.MAÇLAR  ***************");
 
-            if (goalTeam3 > goalTeam4) point3 = point3 + 3;
-            else if (goalTeam4 > goalTeam3) point4 = point4 + 3;
-            else { point3 = point3 + 1; point4 = point4 + 1; }
+                if (listNumbers[i] == 0)
+                {
 
-            matches.Add(" ");
-            matches.Add("******************  2.MAÇLAR  ***************");
+                    matches.Add(team1 + "  " + goalTeam1 + "-" + goalTeam2 + "  " + team2);
+                    matches.Add(team3 + "  " + goalTeam3 + "-" + goalTeam4 + "  " + team4);
+                    totalAG1 = totalAG1 + goalTeam1;
+                    totalAG2 = totalAG2 + goalTeam2;
+                    totalAG3 = totalAG3 + goalTeam3;
+                    totalAG4 = totalAG4 + goalTeam4;
+                    totalYG1 = totalYG1 + goalTeam2;
+                    totalYG2 = totalYG2 + goalTeam1;
+                    totalYG3 = totalYG3 + goalTeam4;
+                    totalYG4 = totalYG4 + goalTeam3;
 
-            goalTeam1 = random.Next(9);
-            goalTeam2 = random.Next(9);
-            goalTeam3 = random.Next(9);
-            goalTeam4 = random.Next(9);
+                    if (goalTeam1 > goalTeam2) point1 = point1 + 3;
+                    else if (goalTeam2 > goalTeam1) point2 = point2 + 3;
+                    else { point1 = point1 + 1; point2 = point2 + 1; }
 
-            matches.Add(team2 + "  " + goalTeam2 + "-" + goalTeam3 + "  " + team3);
-            matches.Add(team4 + "  " + goalTeam4 + "-" + goalTeam1 + "  " + team1);
+                    if (goalTeam3 > goalTeam4) point3 = point3 + 3;
+                    else if (goalTeam4 > goalTeam3) point4 = point4 + 3;
+                    else { point3 = point3 + 1; point4 = point4 + 1; }
 
-            totalAG1 = totalAG1 + goalTeam1;
-            totalAG2 = totalAG2 + goalTeam2;
-            totalAG3 = totalAG3 + goalTeam3;
-            totalAG4 = totalAG4 + goalTeam4;
-            totalYG1 = totalYG1 + goalTeam4;
-            totalYG2 = totalYG2 + goalTeam3;
-            totalYG3 = totalYG3 + goalTeam2;
-            totalYG4 = totalYG4 + goalTeam1;
+                    matches.Add(" ");
+                }
+                if (listNumbers[i] == 1)
+                {
+                    goalTeam1 = random.Next(9);
+                    goalTeam2 = random.Next(9);
+                    goalTeam3 = random.Next(9);
+                    goalTeam4 = random.Next(9);
 
-            if (goalTeam1 > goalTeam4) point1 = point1 + 3;
-            else if (goalTeam4 > goalTeam1) point4 = point4 + 3;
-            else { point1 = point1 + 1; point4 = point4 + 1; }
+                    matches.Add(team2 + "  " + goalTeam2 + "-" + goalTeam3 + "  " + team3);
+                    matches.Add(team4 + "  " + goalTeam4 + "-" + goalTeam1 + "  " + team1);
 
-            if (goalTeam3 > goalTeam2) point3 = point3 + 3;
-            else if (goalTeam2 > goalTeam3) point2 = point2 + 3;
-            else { point3 = point3 + 1; point2 = point2 + 1; }
+                    totalAG1 = totalAG1 + goalTeam1;
+                    totalAG2 = totalAG2 + goalTeam2;
+                    totalAG3 = totalAG3 + goalTeam3;
+                    totalAG4 = totalAG4 + goalTeam4;
+                    totalYG1 = totalYG1 + goalTeam4;
+                    totalYG2 = totalYG2 + goalTeam3;
+                    totalYG3 = totalYG3 + goalTeam2;
+                    totalYG4 = totalYG4 + goalTeam1;
 
-            matches.Add(" ");
-            matches.Add("******************  3.MAÇLAR  ***************");
+                    if (goalTeam1 > goalTeam4) point1 = point1 + 3;
+                    else if (goalTeam4 > goalTeam1) point4 = point4 + 3;
+                    else { point1 = point1 + 1; point4 = point4 + 1; }
 
-            goalTeam1 = random.Next(9);
-            goalTeam2 = random.Next(9);
-            goalTeam3 = random.Next(9);
-            goalTeam4 = random.Next(9);
+                    if (goalTeam3 > goalTeam2) point3 = point3 + 3;
+                    else if (goalTeam2 > goalTeam3) point2 = point2 + 3;
+                    else { point3 = point3 + 1; point2 = point2 + 1; }
 
-            matches.Add(team4 + "  " + goalTeam4 + "-" + goalTeam2 + "  " + team2);
-            matches.Add(team3 + "  " + goalTeam3 + "-" + goalTeam1 + "  " + team1);
+                    matches.Add(" ");
+                }
+                if (listNumbers[i] == 2)
+                {
+                    goalTeam1 = random.Next(9);
+                    goalTeam2 = random.Next(9);
+                    goalTeam3 = random.Next(9);
+                    goalTeam4 = random.Next(9);
 
-            totalAG1 = totalAG1 + goalTeam1;
-            totalAG2 = totalAG2 + goalTeam2;
-            totalAG3 = totalAG3 + goalTeam3;
-            totalAG4 = totalAG4 + goalTeam4;
-            totalYG1 = totalYG1 + goalTeam3;
-            totalYG2 = totalYG2 + goalTeam4;
-            totalYG3 = totalYG3 + goalTeam1;
-            totalYG4 = totalYG4 + goalTeam2;
+                    matches.Add(team4 + "  " + goalTeam4 + "-" + goalTeam2 + "  " + team2);
+                    matches.Add(team3 + "  " + goalTeam3 + "-" + goalTeam1 + "  " + team1);
 
-            if (goalTeam2 > goalTeam4) point2 = point2 + 3;
-            else if (goalTeam4 > goalTeam2) point4 = point4 + 3;
-            else { point2 = point2 + 1; point4 = point4 + 1; }
+                    totalAG1 = totalAG1 + goalTeam1;
+                    totalAG2 = totalAG2 + goalTeam2;
+                    totalAG3 = totalAG3 + goalTeam3;
+                    totalAG4 = totalAG4 + goalTeam4;
+                    totalYG1 = totalYG1 + goalTeam3;
+                    totalYG2 = totalYG2 + goalTeam4;
+                    totalYG3 = totalYG3 + goalTeam1;
+                    totalYG4 = totalYG4 + goalTeam2;
 
-            if (goalTeam3 > goalTeam1) point3 = point3 + 3;
-            else if (goalTeam1 > goalTeam3) point1 = point1 + 3;
-            else { point3 = point3 + 1; point1 = point1 + 1; }
+                    if (goalTeam2 > goalTeam4) point2 = point2 + 3;
+                    else if (goalTeam4 > goalTeam2) point4 = point4 + 3;
+                    else { point2 = point2 + 1; point4 = point4 + 1; }
 
-            matches.Add(" ");
-            matches.Add("******************  4.MAÇLAR  ***************");
+                    if (goalTeam3 > goalTeam1) point3 = point3 + 3;
+                    else if (goalTeam1 > goalTeam3) point1 = point1 + 3;
+                    else { point3 = point3 + 1; point1 = point1 + 1; }
 
-            goalTeam1 = random.Next(9);
-            goalTeam2 = random.Next(9);
-            goalTeam3 = random.Next(9);
-            goalTeam4 = random.Next(9);
+                    matches.Add(" ");
+                }
+                if (listNumbers[i] == 3)
+                {
+                    goalTeam1 = random.Next(9);
+                    goalTeam2 = random.Next(9);
+                    goalTeam3 = random.Next(9);
+                    goalTeam4 = random.Next(9);
 
-            matches.Add(team1 + "  " + goalTeam1 + "-" + goalTeam3 + "  " + team3);
-            matches.Add(team2 + "  " + goalTeam2 + "-" + goalTeam4 + "  " + team4);
+                    matches.Add(team1 + "  " + goalTeam1 + "-" + goalTeam3 + "  " + team3);
+                    matches.Add(team2 + "  " + goalTeam2 + "-" + goalTeam4 + "  " + team4);
 
-            totalAG1 = totalAG1 + goalTeam1;
-            totalAG2 = totalAG2 + goalTeam2;
-            totalAG3 = totalAG3 + goalTeam3;
-            totalAG4 = totalAG4 + goalTeam4;
-            totalYG1 = totalYG1 + goalTeam3;
-            totalYG2 = totalYG2 + goalTeam4;
-            totalYG3 = totalYG3 + goalTeam1;
-            totalYG4 = totalYG4 + goalTeam2;
+                    totalAG1 = totalAG1 + goalTeam1;
+                    totalAG2 = totalAG2 + goalTeam2;
+                    totalAG3 = totalAG3 + goalTeam3;
+                    totalAG4 = totalAG4 + goalTeam4;
+                    totalYG1 = totalYG1 + goalTeam3;
+                    totalYG2 = totalYG2 + goalTeam4;
+                    totalYG3 = totalYG3 + goalTeam1;
+                    totalYG4 = totalYG4 + goalTeam2;
 
-            if (goalTeam2 > goalTeam4) point2 = point2 + 3;
-            else if (goalTeam4 > goalTeam2) point4 = point4 + 3;
-            else { point2 = point2 + 1; point4 = point4 + 1; }
+                    if (goalTeam2 > goalTeam4) point2 = point2 + 3;
+                    else if (goalTeam4 > goalTeam2) point4 = point4 + 3;
+                    else { point2 = point2 + 1; point4 = point4 + 1; }
 
-            if (goalTeam3 > goalTeam1) point3 = point3 + 3;
-            else if (goalTeam1 > goalTeam3) point1 = point1 + 3;
-            else { point3 = point3 + 1; point1 = point1 + 1; }
+                    if (goalTeam3 > goalTeam1) point3 = point3 + 3;
+                    else if (goalTeam1 > goalTeam3) point1 = point1 + 3;
+                    else { point3 = point3 + 1; point1 = point1 + 1; }
 
-            matches.Add(" ");
-            matches.Add("******************  5.MAÇLAR  ***************");
+                    matches.Add(" ");
+                }
+                if (listNumbers[i] == 4)
+                {
+                    goalTeam1 = random.Next(9);
+                    goalTeam2 = random.Next(9);
+                    goalTeam3 = random.Next(9);
+                    goalTeam4 = random.Next(9);
 
-            goalTeam1 = random.Next(9);
-            goalTeam2 = random.Next(9);
-            goalTeam3 = random.Next(9);
-            goalTeam4 = random.Next(9);
+                    matches.Add(team1 + "  " + goalTeam1 + "-" + goalTeam4 + "  " + team4);
+                    matches.Add(team3 + "  " + goalTeam3 + "-" + goalTeam2 + "  " + team2);
 
-            matches.Add(team1 + "  " + goalTeam1 + "-" + goalTeam4 + "  " + team4);
-            matches.Add(team3 + "  " + goalTeam3 + "-" + goalTeam2 + "  " + team2);
+                    totalAG1 = totalAG1 + goalTeam1;
+                    totalAG2 = totalAG2 + goalTeam2;
+                    totalAG3 = totalAG3 + goalTeam3;
+                    totalAG4 = totalAG4 + goalTeam4;
+                    totalYG1 = totalYG1 + goalTeam4;
+                    totalYG2 = totalYG2 + goalTeam3;
+                    totalYG3 = totalYG3 + goalTeam2;
+                    totalYG4 = totalYG4 + goalTeam1;
 
-            totalAG1 = totalAG1 + goalTeam1;
-            totalAG2 = totalAG2 + goalTeam2;
-            totalAG3 = totalAG3 + goalTeam3;
-            totalAG4 = totalAG4 + goalTeam4;
-            totalYG1 = totalYG1 + goalTeam4;
-            totalYG2 = totalYG2 + goalTeam3;
-            totalYG3 = totalYG3 + goalTeam2;
-            totalYG4 = totalYG4 + goalTeam1;
+                    if (goalTeam1 > goalTeam4) point1 = point1 + 3;
+                    else if (goalTeam4 > goalTeam1) point4 = point4 + 3;
+                    else { point1 = point1 + 1; point4 = point4 + 1; }
 
-            if (goalTeam1 > goalTeam4) point1 = point1 + 3;
-            else if (goalTeam4 > goalTeam1) point4 = point4 + 3;
-            else { point1 = point1 + 1; point4 = point4 + 1; }
+                    if (goalTeam3 > goalTeam2) point3 = point3 + 3;
+                    else if (goalTeam2 > goalTeam3) point2 = point2 + 3;
+                    else { point3 = point3 + 1; point2 = point2 + 1; }
 
-            if (goalTeam3 > goalTeam2) point3 = point3 + 3;
-            else if (goalTeam2 > goalTeam3) point2 = point2 + 3;
-            else { point3 = point3 + 1; point2 = point2 + 1; }
+                    matches.Add(" ");
+                }
+                if (listNumbers[i] == 5)
+                {
 
-            matches.Add(" ");
-            matches.Add("******************  6.MAÇLAR  ***************");
+                    goalTeam1 = random.Next(9);
+                    goalTeam2 = random.Next(9);
+                    goalTeam3 = random.Next(9);
+                    goalTeam4 = random.Next(9);
 
-            goalTeam1 = random.Next(9);
-            goalTeam2 = random.Next(9);
-            goalTeam3 = random.Next(9);
-            goalTeam4 = random.Next(9);
+                    matches.Add(team2 + "  " + goalTeam2 + "-" + goalTeam1 + "  " + team1);
+                    matches.Add(team4 + "  " + goalTeam4 + "-" + goalTeam3 + "  " + team3);
 
-            matches.Add(team2 + "  " + goalTeam2 + "-" + goalTeam1 + "  " + team1);
-            matches.Add(team4 + "  " + goalTeam4 + "-" + goalTeam3 + "  " + team3);
+                    totalAG1 = totalAG1 + goalTeam1;
+                    totalAG2 = totalAG2 + goalTeam2;
+                    totalAG3 = totalAG3 + goalTeam3;
+                    totalAG4 = totalAG4 + goalTeam4;
+                    totalYG1 = totalYG1 + goalTeam2;
+                    totalYG2 = totalYG2 + goalTeam1;
+                    totalYG3 = totalYG3 + goalTeam4;
+                    totalYG4 = totalYG4 + goalTeam3;
 
-            totalAG1 = totalAG1 + goalTeam1;
-            totalAG2 = totalAG2 + goalTeam2;
-            totalAG3 = totalAG3 + goalTeam3;
-            totalAG4 = totalAG4 + goalTeam4;
-            totalYG1 = totalYG1 + goalTeam2;
-            totalYG2 = totalYG2 + goalTeam1;
-            totalYG3 = totalYG3 + goalTeam4;
-            totalYG4 = totalYG4 + goalTeam3;
+                    if (goalTeam1 > goalTeam2) point1 = point1 + 3;
+                    else if (goalTeam2 > goalTeam1) point2 = point2 + 3;
+                    else { point1 = point1 + 1; point2 = point2 + 1; }
 
-            if (goalTeam1 > goalTeam2) point1 = point1 + 3;
-            else if (goalTeam2 > goalTeam1) point2 = point2 + 3;
-            else { point1 = point1 + 1; point2 = point2 + 1; }
+                    if (goalTeam3 > goalTeam4) point3 = point3 + 3;
+                    else if (goalTeam4 > goalTeam3) point4 = point4 + 3;
+                    else { point3 = point3 + 1; point4 = point4 + 1; }
 
-            if (goalTeam3 > goalTeam4) point3 = point3 + 3;
-            else if (goalTeam4 > goalTeam3) point4 = point4 + 3;
-            else { point3 = point3 + 1; point4 = point4 + 1; }
+                    matches.Add("***********************************");
+                }
+            }
 
-            matches.Add("***********************************");
             int avg1 = totalAG1 - totalYG1;
             int avg2 = totalAG2 - totalYG2;
             int avg3 = totalAG3 - totalYG3;
@@ -232,7 +263,6 @@ namespace ChampionsLeaugue
             newTeam = new Team(team4, point4, totalAG4, totalYG4, avg4);
             teams.Add(newTeam);
 
-            int number;
             Team temp = null;
             for (int i = 0; i < teams.Count - 1; i++)
             {
@@ -293,6 +323,7 @@ namespace ChampionsLeaugue
             }
 
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
