@@ -147,7 +147,6 @@ namespace ChampionsLeaugue
                     ListBag4.Add(teams[selectedTeams[i]]);
                 }
             }
-            Console.WriteLine("Torbalar");
 
             for (int j = 0; j < 4; j++)
             {
@@ -155,22 +154,18 @@ namespace ChampionsLeaugue
                 {
                     if (j == 0)
                     {
-                        if (i == 0) Console.WriteLine("1.TORBA");
                         listBag1.Items.Add(ListBag1[i]);
                     }
                     else if (j == 1)
                     {
-                        if (i == 0) Console.WriteLine("2.TORBA");
                         listBag2.Items.Add(ListBag2[i]);
                     }
                     else if (j == 2)
                     {
-                        if (i == 0) Console.WriteLine("3.TORBA");
                         listBag3.Items.Add(ListBag3[i]);
                     }
                     else
                     {
-                        if (i == 0) Console.WriteLine("4.TORBA");
                         listBag4.Items.Add(ListBag4[i]);
                     }
 
